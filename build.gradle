@@ -42,7 +42,7 @@ dependencies {
     // https://mvnrepository.com/artifact/org.postgresql/postgresql
     compile group: 'org.postgresql', name: 'postgresql', version: '42.2.18'
 
-    // compile 'org.flywaydb:flyway-core:7.5.2'
+    compile 'org.flywaydb:flyway-core:7.5.2'
 
     runtimeOnly 'mysql:mysql-connector-java'
 
