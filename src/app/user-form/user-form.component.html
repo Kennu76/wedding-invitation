@@ -1,0 +1,37 @@
+<div class="container">
+  <form (ngSubmit)="onSubmit()" #userForm="ngForm">
+    <div class="form-group">
+      <label for="firstName">Eesnimi</label>
+      <input
+        type="text"
+        [(ngModel)]="user.firstName"
+        class="form-control"
+        id="firstName"
+        name="firstName"
+        placeholder="Sisesta oma eesnimi"
+        required
+        #name="ngModel"
+      />
+
+      <label for="lastName">Perekonnanimi</label>
+      <input
+        type="text"
+        [(ngModel)]="user.lastName"
+        class="form-control"
+        id="lastName"
+        name="lastName"
+        placeholder="Sisesta oma perekonnanimi"
+        required
+        #name="ngModel"
+      />
+      </div>
+
+      <button
+        type="submit"
+        [disabled]="!userForm.form.valid"
+        class="btn btn-info"
+      >
+        Esita
+      </button>
+  </form>
+</div>
