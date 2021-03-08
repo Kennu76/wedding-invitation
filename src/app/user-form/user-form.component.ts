@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { User } from '../model/user';
 
@@ -23,7 +23,11 @@ export class UserFormComponent implements OnInit {
 
   saveUser(user: User) {
     console.log("user ", user);
-    this.http.post('https://knl9bom448.execute-api.us-east-1.amazonaws.com/dev', user).subscribe(
+
+    let newHeaders = new HttpHeaders({ "content-type": "application/json", });
+    newHeaders.append('x-api-key', "6Y6bswfL5w3oLv0kHgZTQ8H0VXuela6I9UPYIgOw");
+
+    this.http.post('https://knl9bom448.execute-api.us-east-1.amazonaws.com/prod', user).subscribe(
       (response) => console.log(response),
       (error) => console.log(error)
     );
